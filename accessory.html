@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Car Accessories</title>
+    <link rel="stylesheet" type="text/css" href="./css/global.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+      integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h2>Add Item</h2>
+    <label for="accessory">Accessory:</label>
+    <select id="accessory">
+      <option value="Car Cover">Car Cover</option>
+      <option value="Seat Covers">Seat Covers</option>
+      <option value="Phone Holder">Phone Holder</option>
+    </select>
+    <br />
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" min="1" value="1" />
+    <br />
+    <button class="button" onclick="addItem()">Add</button>
+    <h1>Car Accessories</h1>
+    <h2>Available Accessories</h2>
+    <table>
+      <tr>
+        <th>Accessory</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>Car Cover</td>
+        <td>$50</td>
+      </tr>
+      <tr>
+        <td>Seat Covers</td>
+        <td>$30</td>
+      </tr>
+      <tr>
+        <td>Phone Holder</td>
+        <td>$15</td>
+      </tr>
+    </table>
+    <h2>Product List</h2>
+    <table id="productList">
+      <tr>
+        <th>Accessory</th>
+        <th>Amount</th>
+        <th>Price</th>
+      </tr>
+    </table>
+    <h3>Total Price: <span id="totalPrice">$0</span></h3>
+    <h3>Total Vat: <span id="totalVat">$0</span></h3>
+    <h2>Grand Total: <span id="grandTotal">$0</span></h2>
+
+    <script>
+      function addItem() {
+        var accessory = $("#accessory").val();
+        var amount = $("#amount").val();
+        var price = 0;
+        switch (accessory) {
+          case "Car Cover":
+            price = 50;
+            break;
+          case "Seat Covers":
+            price = 30;
+            break;
+          case "Phone Holder":
+            price = 15;
+            break;
+        }
+        var totalPrice = parseInt($("#totalPrice").text().substring(1));
+        var newTotalPrice = totalPrice + price * amount;
+        $("#totalPrice").text("$" + newTotalPrice);
+        var vatRate = 0.07;
+        var totalVat = newTotalPrice * vatRate;
+        $("#totalVat").text("$" + totalVat.toFixed(2));
+        var grandTotal = newTotalPrice + totalVat;
+        $("#grandTotal").text("$" + grandTotal.toFixed(2));
+        var table = $("#productList");
+        var row = $("<tr></tr>");
+        $("<td></td>").text(accessory).appendTo(row);
+        $("<td></td>").text(amount).appendTo(row);
+        $("<td></td>")
+          .text("$" + price * amount)
+          .appendTo(row);
+        table.append(row);
+        accessoryCell.text(accessory);
+        amountCell.text(amount);
+        priceCell.text("$" + price * amount);
+      }
+    </script>
+  </body>
+</html>
