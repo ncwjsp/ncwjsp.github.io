@@ -1,0 +1,20 @@
+[
+  {
+    "quantity": 2,
+    "item": "Car Cover",
+    "unitPrice": 50.0,
+    "amount": 100.0
+  },
+  {
+    "quantity": 9,
+    "item": "Seat Covers",
+    "unitPrice": 30.0,
+    "amount": 270.0
+  },
+  {
+    "quantity": 11,
+    "item": "Phone Holder",
+    "unitPrice": 15.0,
+    "amount": 165.0
+  }
+]

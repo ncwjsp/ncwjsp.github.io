@@ -1,0 +1,45 @@
+.shop-logo:hover {
+  transform: scale(1.1);
+  transition: transform 0.5s;
+  cursor: pointer;
+}
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.btn-delete {
+  background-color: rgb(202, 92, 92);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin: 1px;
+}
+
+.btn-delete:hover {
+  transition: 0.5s;
+  background-color: darkred;
+  cursor: pointer;
+}
+
+.btn.btn-primary {
+  background-color: rgb(15, 15, 15);
+  border: none;
+  border-radius: 10px;
+}
+
+.btn.btn-primary:hover {
+  background-color: rgb(92, 92, 92);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+select {
+  cursor: pointer; /* change the mouse cursor icon */
+  border-radius: 5px;
+  color: rgb(0, 0, 0); /* text color */
+  background-color: rgb(255, 255, 255);
+
+  padding: 5px 5px;
+}
