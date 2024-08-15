@@ -7,14 +7,18 @@ import Row from "react-bootstrap/Row";
 import DataTable from "./components/DataTable";
 import productList from "./accessory-products.json";
 import "./App.css";
+import { useLocalStorage } from "react-use";
 
 function App() {
   const productRef = useRef();
   const quantityRef = useRef();
 
   const [price, setPrice] = useState(productList[0].price);
-  const [selectedItems, setSelectedItems] = useState([]);
-  const [filteredSelectedItems, setFilteredSelectedItems] = useState([]);
+  const [selectedItems, setSelectedItems] = useLocalStorage("selectedItem", []);
+
+  const [filteredSelectedItems, setFilteredSelectedItems] = useState(
+    ...selectedItems
+  );
 
   const handleSelect = (e) => {
     const pid = parseInt(productRef.current.value);
